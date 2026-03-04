@@ -1,0 +1,112 @@
+.item {
+  /*porque none? E uma propriedade que faz as coisas sumirem, 
+	então quem tiver a classe (.item )vai sumir, so vai ficar aparente 
+	quem classe (active)  */
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  /*Quando você cria uma variável CSS, como --background, ela guarda um valor 
+(por exemplo, uma cor).Para usar essa variável, você chama com var(--background).
+Assim, o navegador entende que o background-color deve receber o valor 
+que está dentro da variável. */
+  background-color: var(--background);
+}
+
+.item.active {
+  display: block;
+}
+
+.item .title {
+  font-size: 12rem;
+  color: #ffffff;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-weight: bold;
+  text-align: center;
+  /*position: absolute; → Permite posicionar o elemento em relação ao seu contêiner 
+(normalmente o body ou outro elemento com position: relative;).
+left: 50%; top: 50%; → Move o ponto de referência do elemento (o canto superior esquerdo)
+ para o centro da tela.
+transform: translate(-50%, -50%); → Corrige o deslocamento, porque ao usar left e top 
+o navegador centraliza pelo canto do elemento. O translate desloca metade da largura para a 
+esquerda e metade da altura para cima, garantindo que o centro do elemento coincida com 
+o centro da tela. */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.item .fruta {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  /*Pense nos elementos como se fossem camadas de papel sobre uma mesa.O z-index 
+	indica qual papel fica por cima e qual fica por baixo.Quanto maior o valor do 
+	z-index, mais "na frente" o elemento aparece.Se dois elementos ocupam o mesmo 
+	espaço, o navegador usa o z-index para decidir qual deles será visível por cima.*/
+  z-index: 3;
+}
+
+.item .refri {
+  z-index: 2;
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#prev,
+#next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #eee9;
+  border: 1px solid #eee9;
+  color: #eee;
+  font-size: x-large;
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 4;
+  border-radius: 50%;
+}
+
+#prev {
+  left: 30px;
+}
+
+#next {
+  right: 30px;
+}
+@keyframes toActive {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.item.active img.fruta {
+  animation: toActive 0.5s ease-in-out 1;
+}
+
+.item.active .title {
+  animation: toActive 0.5s ease-in-out 1;
+}

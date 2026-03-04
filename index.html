@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicação Animada do HTML,Javascript e CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!--Cada "item" vai receber um background diferente.
+
+Para isso, criamos uma variável chamada --background.
+
+Essa variável recebe um valor de cor diferente em cada elemento:
+
+#ea3041 → Morango
+
+#2d5643 → Abacate
+
+#e7a043 → Laranja -->
+
+      <div class="item active" style="--background: #ea3041">
+        <div class="title">Morango</div>
+        <img src="img/Morango.png.png" class="fruta" />
+        <img src="img/Morangorefrigera.png.png" class="refri" />
+      </div>
+
+      <div class="item" style="--background: #2d5643">
+        <div class="title">Abacate</div>
+        <img src="img/Abacate- (2).png" class="fruta" />
+        <img src="img/Abacate-refrigerante1 (1).png" class="refri" />
+      </div>
+
+      <div class="item" style="--background: #e7a043">
+        <div class="title">Laranja</div>
+        <img src="img/Laranja-(2).png" class="fruta" />
+        <img src="img/Laranja-refrigerante (1).png" class="refri" />
+      </div>
+      <div class="arrow">
+        <button id="prev"><</button>
+        <button id="next">></button>
+      </div>
+    </main>
+  </body>
+  <script src="./scripts.js"></script>
+</html>
